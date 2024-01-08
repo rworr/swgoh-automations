@@ -10,4 +10,9 @@ def comlink():
 
 def test_player(comlink):
     player = comlink.get_player(245866554)
-    assert player['name'] == "Hulosja"
+    assert player.name == "Hulosja"
+
+
+def test_metadata(comlink):
+    metadata = comlink.get_metadata()
+    assert ('.' and ':') in metadata.latest_version

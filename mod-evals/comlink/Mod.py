@@ -8,7 +8,7 @@ class Mod:
 
 
         self.primary_stat = comlink_data["primaryStat"] #TODO parse out
-        self.secondary_stats =
+        self.secondary_stats = 0
 
         """
             "primaryStat": {
