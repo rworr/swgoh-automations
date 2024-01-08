@@ -6,9 +6,8 @@ class Mod:
         self.tier = comlink_data["tier"]
         self.rerolled_count = comlink_data["rerolledCount"]
 
-
-        self.primary_stat = comlink_data["primaryStat"] #TODO parse out
-        self.secondary_stats = 0
+        self.primary_stat = comlink_data["primaryStat"]  # TODO parse out
+        self.secondary_stats = ""  # TODO
 
         """
             "primaryStat": {

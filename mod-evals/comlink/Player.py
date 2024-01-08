@@ -1,3 +1,6 @@
+from comlink.RosterUnit import RosterUnit
+
+
 class Player:
     def __init__(self, comlink_payload: dict):
         self.name = comlink_payload['name']
@@ -7,7 +10,7 @@ class Player:
         self.guild_id = comlink_payload['guildId']
         self.guild_name = comlink_payload['guildName']
 
-        self.roster = comlink_payload
+        self.roster = [RosterUnit(payload) for payload in comlink_payload['rosterUnit']]
 
         # rosterUnit
         # TODO: datacrons? Load game data to get string resources?

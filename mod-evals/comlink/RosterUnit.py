@@ -1,3 +1,6 @@
+from comlink.Mod import Mod
+
+
 class RosterUnit:
     def __init__(self, comlink_payload: dict):
         self.id = comlink_payload["id"]
@@ -7,7 +10,7 @@ class RosterUnit:
         self.current_tier = comlink_payload["currentTier"]
         self.relic = comlink_payload["relic"]["currentTier"]
 
-        self.mods
+        self.mods = [Mod(payload) for payload in comlink_payload["equippedStatMod"]]
         # equipment
         # skills
         # stats
