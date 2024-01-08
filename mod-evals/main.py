@@ -1,5 +1,7 @@
+
 from dotenv import load_dotenv
 from subprocess import run
+
 
 # Initialize docker comlink with secrets
 if __name__ == '__main__':
