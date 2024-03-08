@@ -1,11 +1,16 @@
 import pytest
+from dotenv import load_dotenv
 
 from comlink import Comlink
 
 
 @pytest.fixture
 def comlink():
-    return Comlink("http://localhost:3200")
+    # TODO: skip starting comlink if already running -> use docker SDK
+    load_dotenv("../.env")
+    # run(["../comlink-start.sh"])
+    yield Comlink()
+    # run(["../comlink-stop.sh"])
 
 
 def test_player(comlink):
@@ -15,4 +20,14 @@ def test_player(comlink):
 
 def test_metadata(comlink):
     metadata = comlink.get_metadata()
-    assert ('.' and ':') in metadata.latest_version
+    assert ('.' and ':') in metadata.data_version
+
+
+def test_localization(comlink):
+    localization = comlink.get_localization()
+    assert localization.get('UNIT_GREEDO_NAME') == 'Greedo'
+
+
+def test_data(comlink):
+    data = comlink.get_data()
+    assert data.characters['ZORIIBLISS_V2:SEVEN_STAR'] == 'Zorii Bliss'
