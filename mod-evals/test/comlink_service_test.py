@@ -14,7 +14,7 @@ def comlink():
 
 
 def test_player(comlink):
-    player = comlink.get_player(245866554)
+    player = comlink.get_player_by_ally_code(245866554)
     assert player.name == "Hulosja"
 
 

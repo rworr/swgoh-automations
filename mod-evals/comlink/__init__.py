@@ -144,15 +144,14 @@ class Comlink:
         self._warm()
 
     def _warm(self):
-        print("Fetching metadata...")
         self.get_metadata()
-        print("Fetching localization...")
         self.get_localization()
-        print("Fetching game data...")
         self.get_data()
+        print("Comlink ready!")
 
     def get_metadata(self) -> Metadata:
         if not self.metadata:
+            print("Fetching game metadata...")
             payload = {"payload": {}}
             response = self._comlink_post(path="metadata", data=payload)
             self.metadata = Metadata(response)
@@ -160,6 +159,7 @@ class Comlink:
 
     def get_localization(self) -> Localization:
         if not self.localization:
+            print("Fetching localization data...")
             payload = {
                 "unzip": True,
                 "payload": {
@@ -172,6 +172,7 @@ class Comlink:
 
     def get_data(self) -> Data:
         if not self.data:
+            print("Fetching game data...")
             data_payload = {
                 "payload": {
                     "version": self.get_metadata().data_version,
@@ -182,7 +183,8 @@ class Comlink:
             self.data = Data(response, self.get_localization())
         return self.data
 
-    def get_player(self, ally_code: int) -> Player:
+    def get_player_by_ally_code(self, ally_code: int) -> Player:
+        print(f"Fetching information for player {ally_code}...")
         player_payload = {
             "payload": {
                 "allyCode": str(ally_code)
@@ -191,7 +193,18 @@ class Comlink:
         response = self._comlink_post(path="player", data=player_payload)
         return Player(player_data=response, game_data=self.get_data())
 
+    def get_player_by_id(self, player_id: str) -> Player:
+        print(f"Fetching information for player {player_id}...")
+        player_payload = {
+            "payload": {
+                "playerId": player_id
+            }
+        }
+        response = self._comlink_post(path="player", data=player_payload)
+        return Player(player_data=response, game_data=self.get_data())
+
     def get_guild(self, guild_id: str) -> Guild:
+        print(f"Fetching information for guild {guild_id}...")
         guild_payload = {
             "payload": {
                 "guildId": guild_id
@@ -207,6 +220,24 @@ class Comlink:
             data=_comlink_dumps(data),
         )
         return response.json()
+
+
+COMLINK = None
+
+
+def get_comlink() -> Comlink:
+    global COMLINK
+    if COMLINK is None:
+        # TODO: skip starting comlink if already running -> use docker SDK
+        # run(["./comlink-start.sh"])
+        COMLINK = Comlink()
+    return COMLINK
+
+
+def stop_comlink():
+    # TODO: skip starting comlink if already running -> use docker SDK
+    # run(["./comlink-stop.sh"])
+    pass
 
 
 def _comlink_dumps(obj: dict) -> str:
