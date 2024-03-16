@@ -1,14 +1,10 @@
+import json
 import os
 from enum import Enum
-from json import dumps
 
 import requests
 
 from comlink.StatDefinitions import STAT_DEFINITIONS
-
-
-def _comlink_dumps(obj: dict) -> str:
-    return dumps(obj)
 
 
 class Metadata:
@@ -128,6 +124,13 @@ class Player:
                 self.roster.append(RosterUnit(unit_data, game_data))
 
 
+class Guild:
+    def __init__(self, guild_data: dict):
+        self.name = guild_data["guild"]["profile"]["name"]
+        self.guild_id = guild_data["guild"]["profile"]["id"]
+        self.player_ids = [member["playerId"] for member in guild_data["guild"]["member"]]
+
+
 class Comlink:
     """
     TODO docstring, generics?
@@ -188,6 +191,15 @@ class Comlink:
         response = self._comlink_post(path="player", data=player_payload)
         return Player(player_data=response, game_data=self.get_data())
 
+    def get_guild(self, guild_id: str) -> Guild:
+        guild_payload = {
+            "payload": {
+                "guildId": guild_id
+            }
+        }
+        response = self._comlink_post(path="guild", data=guild_payload)
+        return Guild(guild_data=response)
+
     def _comlink_post(self, path: str, data: dict) -> dict:
         response = requests.post(
             url=os.path.join(self.uri, path),
@@ -195,3 +207,7 @@ class Comlink:
             data=_comlink_dumps(data),
         )
         return response.json()
+
+
+def _comlink_dumps(obj: dict) -> str:
+    return json.dumps(obj)

@@ -31,3 +31,9 @@ def test_localization(comlink):
 def test_data(comlink):
     data = comlink.get_data()
     assert data.characters['ZORIIBLISS_V2:SEVEN_STAR'] == 'Zorii Bliss'
+
+
+def test_guild(comlink):
+    guild = comlink.get_guild("jrl9Q-_CRDGdMyNjTQH1rQ")
+    assert guild.name == "MAW Chromium"
+    assert len(guild.player_ids) > 0
