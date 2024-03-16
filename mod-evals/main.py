@@ -1,6 +1,6 @@
+from subprocess import run
 
 from dotenv import load_dotenv
-from subprocess import run
 
 from comlink import Comlink
 
