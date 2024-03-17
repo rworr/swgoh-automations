@@ -5,7 +5,7 @@ STAT_DEFINITIONS = {
         "descKey": "UnitStatDescription_Health_TU7",
         "isDecimal": False,
         "name": "Health",
-        "detailedName": "Max Health"
+        "detailedName": "Health"
     },
     2: {
         "statId": 2,
@@ -149,7 +149,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Dodge",
-        "detailedName": "Dodge Percent Additive"
+        "detailedName": "Dodge (%)"
     },
     20: {
         "statId": 20,
@@ -157,7 +157,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Deflection",
-        "detailedName": "Deflection Percent Additive"
+        "detailedName": "Deflection (%)"
     },
     21: {
         "statId": 21,
@@ -165,7 +165,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Physical Critical Chance",
-        "detailedName": "Physical Critical Percent Additive"
+        "detailedName": "Physical Critical (%)"
     },
     22: {
         "statId": 22,
@@ -173,7 +173,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Special Critical Chance",
-        "detailedName": "Special Critical Percent Additive"
+        "detailedName": "Special Critical (%)"
     },
     23: {
         "statId": 23,
@@ -181,7 +181,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Armor",
-        "detailedName": "Armor Percent Additive"
+        "detailedName": "Armor (%)"
     },
     24: {
         "statId": 24,
@@ -189,7 +189,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Resistance",
-        "detailedName": "Resistance Percent Additive"
+        "detailedName": "Resistance (%)"
     },
     25: {
         "statId": 25,
@@ -197,7 +197,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Armor Penetration",
-        "detailedName": "Armor Penetration Percent Additive"
+        "detailedName": "Armor Penetration (%)"
     },
     26: {
         "statId": 26,
@@ -205,7 +205,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Resistance Penetration",
-        "detailedName": "Resistance Penetration Percent Additive"
+        "detailedName": "Resistance Penetration (%)"
     },
     27: {
         "statId": 27,
@@ -221,7 +221,7 @@ STAT_DEFINITIONS = {
         "descKey": "UnitStatDescription_MaxShield",
         "isDecimal": False,
         "name": "Protection",
-        "detailedName": "Max Protection"
+        "detailedName": "Protection"
     },
     29: {
         "statId": 29,
@@ -245,7 +245,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Physical Damage",
-        "detailedName": "Physical Damage Percent Additive"
+        "detailedName": "Physical Damage (%)"
     },
     32: {
         "statId": 32,
@@ -253,7 +253,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Special Damage",
-        "detailedName": "Special Damage Percent Additive"
+        "detailedName": "Special Damage (%)"
     },
     33: {
         "statId": 33,
@@ -261,7 +261,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Physical Accuracy",
-        "detailedName": "Dodge Negate Percent Additive"
+        "detailedName": "Dodge Negate (%)"
     },
     34: {
         "statId": 34,
@@ -269,7 +269,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Special Accuracy",
-        "detailedName": "Deflection Negate Percent Additive"
+        "detailedName": "Deflection Negate (%)"
     },
     35: {
         "statId": 35,
@@ -277,7 +277,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Physical Critical Avoidance",
-        "detailedName": "Physical Critical Negate Percent Additive"
+        "detailedName": "Physical Critical Negate (%)"
     },
     36: {
         "statId": 36,
@@ -285,7 +285,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Special Critical Avoidance",
-        "detailedName": "Special Critical Negate Percent Additive"
+        "detailedName": "Special Critical Negate (%)"
     },
     37: {
         "statId": 37,
@@ -380,7 +380,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Offense",
-        "detailedName": "Offense Percent Additive"
+        "detailedName": "Offense (%)"
     },
     49: {
         "statId": 49,
@@ -388,7 +388,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Defense",
-        "detailedName": "Defense Percent Additive"
+        "detailedName": "Defense (%)"
     },
     50: {
         "statId": 50,
@@ -396,7 +396,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Defense Penetration",
-        "detailedName": "Defense Penetration Percent Additive"
+        "detailedName": "Defense Penetration (%)"
     },
     51: {
         "statId": 51,
@@ -404,7 +404,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Evasion",
-        "detailedName": "Evasion Percent Additive"
+        "detailedName": "Evasion (%)"
     },
     52: {
         "statId": 52,
@@ -412,7 +412,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Accuracy",
-        "detailedName": "Evasion Negate Percent Additive"
+        "detailedName": "Evasion Negate (%)"
     },
     53: {
         "statId": 53,
@@ -420,7 +420,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Critical Chance",
-        "detailedName": "Critical Chance Percent Additive"
+        "detailedName": "Critical Chance (%)"
     },
     54: {
         "statId": 54,
@@ -428,7 +428,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Critical Avoidance",
-        "detailedName": "Critical Negate Chance Percent Additive"
+        "detailedName": "Critical Negate Chance (%)"
     },
     55: {
         "statId": 55,
@@ -436,7 +436,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Health",
-        "detailedName": "Max Health Percent Additive"
+        "detailedName": "Health (%)"
     },
     56: {
         "statId": 56,
@@ -444,7 +444,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Protection",
-        "detailedName": "Max Protection Percent Additive"
+        "detailedName": "Protection (%)"
     },
     57: {
         "statId": 57,
@@ -452,7 +452,7 @@ STAT_DEFINITIONS = {
         "descKey": "",
         "isDecimal": True,
         "name": "Speed",
-        "detailedName": "Speed Percent Additive"
+        "detailedName": "Speed (%)"
     },
     58: {
         "statId": 58,
@@ -476,7 +476,7 @@ STAT_DEFINITIONS = {
         "descKey": "UnitStatDescription_DefensePenetrationTargetPercentAdditive",
         "isDecimal": True,
         "name": "Defense Penetration",
-        "detailedName": "Target Defense Penetration Percent Additive"
+        "detailedName": "Target Defense Penetration (%)"
     },
     61: {
         "statId": 61,

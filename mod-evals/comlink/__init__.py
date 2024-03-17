@@ -75,7 +75,7 @@ class ModTier(Enum):
 class ModStat:
     def __init__(self, stat_data: dict):
         self.statId = stat_data['stat']['unitStatId']
-        self.name = STAT_DEFINITIONS[self.statId]['name']
+        self.name = STAT_DEFINITIONS[self.statId]['detailedName']
         self.isDecimal = STAT_DEFINITIONS[self.statId]['isDecimal']
         if self.isDecimal:
             self.displayValue = float(stat_data['stat']['unscaledDecimalValue']) / 1000000

@@ -32,7 +32,8 @@ def identify_top_character_loadouts(top_guilds: int) -> Dict[str, TopCharacterLo
 
 def _get_aggregated_loadouts(guild_ids: List[str]) -> Dict[str, AggregateCharacterLoadout]:
     aggregated_loadouts = {}
-    for guild_id in guild_ids:
+    for i, guild_id in enumerate(guild_ids):
+        print(f"Processing guild {i + 1} of {len(guild_ids)}")
         guild = comlink.get_comlink().get_guild(guild_id)
         for player_id in guild.player_ids:
             player = comlink.get_comlink().get_player_by_id(player_id)
@@ -110,5 +111,6 @@ def _identify_top_secondaries(unit: comlink.RosterUnit) -> Counter:
     secondaries = Counter({})
     for mod in unit.mods:
         for secondary in mod.secondaries:
-            secondaries[secondary.name] = secondaries.setdefault(secondary.name, 0) + 1
+            rolls = len(secondary.statRolls)
+            secondaries[secondary.name] = secondaries.setdefault(secondary.name, 0) + rolls
     return secondaries

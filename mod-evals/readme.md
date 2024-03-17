@@ -13,8 +13,8 @@
 2. ~~For a given player + character, identify mod configurations used~~
 3. ~~For multiple players + one character, identify most common mod configurations used~~
 4. ~~Identify top guilds by GP~~
-5. Create mod profile for each character based on top 100 guild players
-6. Output to CSV
+5. ~~Create mod profile for each character based on top 100 guild players~~
+6. ~~Output to CSV~~
 
 ### Mod Scoring
 
